@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <title>Add a Map with Markers using HTML</title>
+    <style>
+      #map {
+        height: 450px;
+        width: 500px;
+      }
+    </style>
+  </head>
+  <body>
+  <div id="map"></div>
+    <script>
+      $.ajax({
+  type: "POST",
+  url: "~/pythoncode.py",
+  data: { param: text}
+}).done(function( o ) {
+   // do something
+});
+    </script>
+
+    <h1>{{ variable }}</h1>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&callback=initMap"
+      async defer></script>
+  </body>
+</html>
