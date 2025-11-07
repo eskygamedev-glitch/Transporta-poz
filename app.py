@@ -105,3 +105,5 @@ while True:
 
 #b-a (uz centru)
 
+
+# karoc tas butu sigh.... spilto domuzimi (a-b) un tad tu dabu orginu un destination. 1. ir orgins, 2. destinations, un tu to dabu kaa listu.
