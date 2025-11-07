@@ -15,8 +15,10 @@ def fetch_data():
         if len(a) < 5:
             continue
 
+        
 
-        vir = str(a[8])
+
+        vir = removeIntigers(a[8])
         # micro gradi
         lon_mikro = float(a[2])
         lat_mikro = float(a[3])
@@ -29,8 +31,8 @@ def fetch_data():
 
         # atrast tuvako/esoso pieturu
         match = trySearch(lat, lon)
-        if match is not None:
-            print(f"Autobuss atrodas pieturā: {match}")
+        #if match is not None:
+            #print(f"Autobuss atrodas pieturā: {match}")
         
 
 
@@ -39,7 +41,14 @@ headers = {
     "Origin-Custom": "saraksti.lv"
 }
 
-
+def removeIntigers(vir):
+    outputStr = ""
+    for char in vir:
+        if char in invalidChars: # Invalid chars can be found below bus stops
+            pass
+        else:
+            outputStr += char
+    return outputStr
 
 
 
@@ -119,7 +128,7 @@ all_bus_stops = [
 
 delta = 0.0001
 sequence = "1,3,"
-
+invalidChars = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
 while True:
    
     fetch_data()
@@ -129,6 +138,7 @@ while True:
     print("Waiting for 10 seconds...")
     print("\n")
     time.sleep(10)
+
 
 
 # 2 ir autobusi
